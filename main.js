@@ -3,6 +3,11 @@ document.getElementById('btnCalcola').addEventListener('click', function() {
     let totaleGatti = parseInt(document.getElementById('totaleGatti').value);
     let gattiPerFila = parseInt(document.getElementById('gattiPerFila').value);
 
+    // Controllo validità
+    if (isNaN(totaleGatti) || isNaN(gattiPerFila) || gattiPerFila === 0) {
+        alert("Per favore, inserisci numeri validi!");
+        return;
+    }
     
 
     // Calcoli
@@ -14,7 +19,7 @@ document.getElementById('btnCalcola').addEventListener('click', function() {
     console.log(`Numero di file complete: ${numeroFile}`);
     console.log(`Gatti fuori dalla fila: ${gattiFuori}`);
     console.log(`Gatti mancanti per una nuova fila: ${gattiMancanti}`);
-    
+
     // Output nel DOM
     let messaggio = `Ci sono ${numeroFile} file di gatti e ne mancano ${gattiMancanti} per una nuova fila, con un avanzo di ${gattiFuori}`;
     document.getElementById('displayRisultato').innerText = messaggio;
