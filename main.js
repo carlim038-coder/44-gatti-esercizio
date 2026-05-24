@@ -10,6 +10,10 @@ document.getElementById('btnCalcola').addEventListener('click', function() {
     let gattiFuori = totaleGatti % gattiPerFila;
     let gattiMancanti = gattiFuori === 0 ? 0 : (gattiPerFila - gattiFuori);
 
+    // output in console
+    console.log(`Numero di file complete: ${numeroFile}`);
+    console.log(`Gatti fuori dalla fila: ${gattiFuori}`);
+    console.log(`Gatti mancanti per una nuova fila: ${gattiMancanti}`);
     
     // Output nel DOM
     let messaggio = `Ci sono ${numeroFile} file di gatti e ne mancano ${gattiMancanti} per una nuova fila, con un avanzo di ${gattiFuori}`;
